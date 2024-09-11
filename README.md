@@ -41,7 +41,7 @@ BCFCODE is a place for tech enthusiasts who value creativity and collaboration. 
 ### Team Members:
 
 - [Morteza Bakhshandeh](https://bakhshandehmorteza.ir/)
-- Adib
+- Adib Khaki
 
 # [© BCFCODE](https://github.com/BCFCODE)
 
