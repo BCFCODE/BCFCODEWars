@@ -13,8 +13,7 @@
   Since you're already using MongoDB in your project, reuse your existing MongoDB connection logic. Here’s an example of how to implement the API route to seed the users collection.
 
   /app/seed/route.ts
-  ts
-  Copy code
+
   import { NextResponse } from 'next/server';
   import { MongoClient } from 'mongodb';
 
@@ -53,8 +52,6 @@
   3. Handle Environment Variables
   Ensure that your MongoDB connection URI is stored in .env.local:
 
-  bash
-  Copy code
   # .env.local
   MONGODB_URI=mongodb+srv://BCFCODE:Mb.24201320519363627469@bcfcodewars.i4yn9.mongodb.net/BCFCODEwars?retryWrites=true&w=majority&appName=BCFCODEwars
   Next.js automatically loads environment variables from .env.local, so you can securely store sensitive data like the MongoDB connection string.
@@ -64,18 +61,12 @@
 
   Start your Next.js development server:
 
-  bash
-  Copy code
   pnpm dev
   Open your browser and go to:
 
-  bash
-  Copy code
   http://localhost:3000/seed
   This will trigger the API route to run the seeding process. You should see a JSON response indicating how many users were seeded:
 
-  json
-  Copy code
   {
     "message": "Seeded 3 users."
   }
@@ -84,8 +75,6 @@
 
   For example, you can pass a SECRET_KEY in the query string:
 
-  ts
-  Copy code
   export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const secretKey = searchParams.get('key');
