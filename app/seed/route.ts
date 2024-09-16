@@ -9,6 +9,7 @@
 
   mkdir -p app/seed
   touch app/seed/route.ts
+
   2. Connect to MongoDB
   Since you're already using MongoDB in your project, reuse your existing MongoDB connection logic. Here’s an example of how to implement the API route to seed the users collection.
 
@@ -18,7 +19,7 @@
   import { MongoClient } from 'mongodb';
 
   // MongoDB connection URI from your environment variables
-  const uri = process.env.MONGODB_URI || "mongodb+srv://BCFCODE:Mb.24201320519363627469@bcfcodewars.i4yn9.mongodb.net/BCFCODEwars?retryWrites=true&w=majority&appName=BCFCODEwars";
+  const uri = process.env.MONGODB_URI || "mongodb+srv://BCFCODE:<password>@bcfcodewars.i4yn9.mongodb.net/BCFCODEwars?retryWrites=true&w=majority&appName=BCFCODEwars";
 
   // Example seed data for the 'users' collection
   const seedData = [
@@ -53,7 +54,7 @@
   Ensure that your MongoDB connection URI is stored in .env.local:
 
   # .env.local
-  MONGODB_URI=mongodb+srv://BCFCODE:Mb.24201320519363627469@bcfcodewars.i4yn9.mongodb.net/BCFCODEwars?retryWrites=true&w=majority&appName=BCFCODEwars
+  MONGODB_URI=mongodb+srv://BCFCODE:<password>@bcfcodewars.i4yn9.mongodb.net/BCFCODEwars?retryWrites=true&w=majority&appName=BCFCODEwars
   Next.js automatically loads environment variables from .env.local, so you can securely store sensitive data like the MongoDB connection string.
 
   4. Testing the Seed API Route
@@ -101,13 +102,10 @@
   }
   Then, when accessing the API, you would provide the secret key like this:
 
-  vbnet
-  Copy code
   http://localhost:3000/seed?key=your-secret-key
   And in your .env.local file, you’d have:
 
-  bash
-  Copy code
   SECRET_KEY=your-secret-key
   This way, only requests with the correct key will succeed in seeding the database.
 */
+

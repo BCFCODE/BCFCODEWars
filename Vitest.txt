@@ -5,13 +5,10 @@ Here’s how you can set it up:
 Step-by-Step Setup:
 Install Vitest and Related Packages: Since you use pnpm, run the following command to install Vitest:
 
-bash
-Copy code
 pnpm add -D vitest @testing-library/react @testing-library/jest-dom jsdom
+
 Update package.json: Add a test script for Vitest in your package.json:
 
-json
-Copy code
 {
   "scripts": {
     "test": "vitest"
